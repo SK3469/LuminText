@@ -24,8 +24,6 @@ const TopArticles = async() => {
           },
         },
       });
-      console.log(articles)
-// const isArticles = articles;
     return (
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {articles.slice(0, 3).map((article) => (

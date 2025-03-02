@@ -6,14 +6,16 @@ import SearchInput from './search-input'
 import ToggleMode from './toggle-mode'
 import { Menu, Search, X } from 'lucide-react'
 import { Input } from '@/components/ui/input'
-import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
 import { searchAction } from '@/actions/search'
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
 
 
 
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+
     return (
         <div className=' sticky top-0 z-50 w-full border-b bg-background/50 backdrop-blur-sm supports-[backdrop-filter]:bg-background/20 '>
             <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
@@ -50,18 +52,19 @@ const Navbar = () => {
                         <ToggleMode />
                         {/* User Actions */}
                         <SignedIn>
-                            <UserButton />
+                            <UserButton/>
                         </SignedIn>
                         <SignedOut>
-                            <div className='hidden md:flex items-center gap-2'>
+                            <div className="hidden md:flex items-center gap-2">
                                 <SignInButton>
-                                    <Button variant={'outline'}>Login</Button>
+                                    <Button variant="outline">Login</Button>
                                 </SignInButton>
                                 <SignUpButton>
-                                    <Button>Signup</Button>
+                                    <Button>Sign up</Button>
                                 </SignUpButton>
                             </div>
                         </SignedOut>
+
                     </div>
                     <Button variant={'ghost'} size={'icon'} className='md:hidden text-muted-foreground hover:text-foreground' onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                         {
@@ -76,16 +79,16 @@ const Navbar = () => {
                 <div className="md:hidden py-4 space-y-4 border-t">
                     {/* Search Bar (Mobile) */}
                     <div className="px-4">
-                            <form action={searchAction}>
-                        <div className="relative">
-                            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                            <Input
-                                type="search"
-                                name='search'
-                                placeholder="Search articles..."
-                                className="pl-10 w-full focus-visible:ring-1"
-                            />
-                        </div>
+                        <form action={searchAction}>
+                            <div className="relative">
+                                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                                <Input
+                                    type="search"
+                                    name='search'
+                                    placeholder="Search articles..."
+                                    className="pl-10 w-full focus-visible:ring-1"
+                                />
+                            </div>
                         </form>
                     </div>
 
@@ -123,16 +126,16 @@ const Navbar = () => {
 
                     {/* Mobile Auth Buttons */}
                     <SignedOut>
-                    <div className="px-4 flex flex-col gap-2">
-                        <SignInButton>
-                        <Button variant="outline" className="w-full">
-                            Login
-                        </Button>
-                        </SignInButton>
-                        <SignUpButton>
-                        <Button className="w-full">Sign up</Button>
-                        </SignUpButton>
-                    </div>
+                        <div className="px-4 flex flex-col gap-2">
+                            <SignInButton>
+                                <Button variant="outline" className="w-full">
+                                    Login
+                                </Button>
+                            </SignInButton>
+                            <SignUpButton>
+                                <Button className="w-full">Sign up</Button>
+                            </SignUpButton>
+                        </div>
                     </SignedOut>
                 </div>
             )}
