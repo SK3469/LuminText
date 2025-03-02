@@ -7,7 +7,7 @@ import ToggleMode from './toggle-mode'
 import { Menu, Search, X } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { searchAction } from '@/actions/search'
-import { SignedIn, SignedOut, SignInButton, SignUpButton, useAuth, UserButton, useUser } from '@clerk/nextjs'
+import { SignedIn, SignedOut, SignInButton, SignUpButton,  UserButton, useUser } from '@clerk/nextjs'
 
 
 
