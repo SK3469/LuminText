@@ -7,7 +7,7 @@ import RecentArticles from './recent-articles'
 import { prisma } from '@/lib/prisma'
 
 const BlogDashboard = async() => {
-const [articles, totalComments] = await Promise.all([
+const [articles] = await Promise.all([
   prisma.articles.findMany({
     orderBy:{
       createdAt:'desc'
