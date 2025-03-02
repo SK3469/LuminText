@@ -7,13 +7,14 @@ import ToggleMode from './toggle-mode'
 import { Menu, Search, X } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { searchAction } from '@/actions/search'
-import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
+import { SignedIn, SignedOut, SignInButton, SignUpButton, useAuth, UserButton, useUser } from '@clerk/nextjs'
 
 
 
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+    const { isSignedIn } = useUser();
 
 
     return (
@@ -24,8 +25,8 @@ const Navbar = () => {
                     <div className='flex items-center'>
                         <Link href={'/'} className='flex items-center space-x-2'>
                             <span className='font-bold text-2xl'>
-                                <span className='bg-gradient-to-r from-purple-600 to bg-indigo-600 dark:from-purple-400 to dark:bg-indigo-400 bg-clip-text text-transparent'>Code</span>
-                                <span>Verse</span>
+                                <span className='bg-gradient-to-r from-purple-600 to bg-indigo-600 dark:from-purple-400 to dark:bg-indigo-400 bg-clip-text text-transparent'>Lumin</span>
+                                <span>Text</span>
                             </span>
                         </Link>
                     </div>
@@ -40,9 +41,13 @@ const Navbar = () => {
                         <Link href={"/about"} className='tsxt-sm font-medium text-foreground transition-colors hover:text-foreground'>
                             About
                         </Link>
-                        <Link href={"/dashboard"} className='tsxt-sm font-medium text-foreground transition-colors hover:text-foreground'>
-                            Deshboard
-                        </Link>
+                        <>
+                            {isSignedIn && (
+                                <Link href="/dashboard" className="text-sm font-medium text-foreground transition-colors hover:text-foreground">
+                                    Dashboard
+                                </Link>
+                            )}
+                        </>
                     </div>
 
                     {/* Right Section */}
@@ -52,7 +57,7 @@ const Navbar = () => {
                         <ToggleMode />
                         {/* User Actions */}
                         <SignedIn>
-                            <UserButton/>
+                            <UserButton />
                         </SignedIn>
                         <SignedOut>
                             <div className="hidden md:flex items-center gap-2">

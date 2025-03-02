@@ -12,12 +12,12 @@ const HeroSection = () => {
                     <h1 className='text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl'>Explore the world of code Through
                         <span className='bg-gradient-to-r from-violet-400 bg-clip-text text-transparent'>
                             {" "}
-                            CodeVerse</span>
+                            LuminText</span>
                     </h1>
 
                     <p className="mx-auto max-w-2xl text-lg text-gray-300 md:text-xl">
-                        Discover insightful articles, thought-provoking stories, and expert
-                        perspectives on technology, lifestyle, and innovation.
+                    "Explore a world of knowledge with expert insights, captivating stories, 
+                    and the latest trends in technology, lifestyle, and innovation."
                     </p>
 
                     <div className="flex flex-col items-center gap-4 sm:flex-row md:justify-start">

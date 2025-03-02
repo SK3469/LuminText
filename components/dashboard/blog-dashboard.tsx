@@ -29,7 +29,7 @@ const [articles] = await Promise.all([
  <main className='flex-1 p-4 md:p-8'>
     <div className='flex justify-between items-center mb-8'>
         <div>
-            <h1>Blog Dashboard</h1>
+            <h1 className='font-bold text-xl'>Blog Dashboard</h1>
             <p>Manage your content and analytics</p>
         </div>
       <Link href={'/dashboard/articles/create'}>
