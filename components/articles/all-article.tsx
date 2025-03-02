@@ -65,10 +65,10 @@ export const NoSearchResultPage = () => {
     return (
         <div className=' w-full h-[25%] flex justify-center items-center my-24 inset-0 flex-col'>
             <h1 className='font-3xl md:5xl font-bold text-red-500 '>
-                No Result Found!
+                No Result Found
             </h1>
             <p className='text-lg'>
-                We couldn’t find any articles matching your search. Try with a different keyword or phrase.
+            We couldn&rsquo;t find any articles matching your search. Try with a different keyword or phrase.
             </p>
         </div>
     )
