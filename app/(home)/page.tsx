@@ -1,10 +1,9 @@
-
+import AllArticleSkeletonPage from "@/components/articles/all-article-skeleton";
 import HeroSection from "@/components/home/hero-section";
 import TopArticles from "@/components/home/top-articles";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Suspense } from "react";
-import { AllArticleSkeletonPage } from "../articles/page";
 
 
 
