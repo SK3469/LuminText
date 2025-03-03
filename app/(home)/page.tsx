@@ -1,9 +1,11 @@
+
 import HeroSection from "@/components/home/hero-section";
 import TopArticles from "@/components/home/top-articles";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Suspense } from "react";
-import { AllAArticleSkeletonPage } from "../articles/page";
+import { AllArticleSkeletonPage } from "../articles/page";
+
 
 
 
@@ -17,7 +19,7 @@ export default function Home() {
           <h1 className="text-center font-bold text-3xl tracking-tight text-gray-900 dark:text-white">Featured Articles</h1>
           <p>Our most popular and trending content</p>
         </div>
-        <Suspense fallback={<AllAArticleSkeletonPage/>  }> 
+        <Suspense fallback={<AllArticleSkeletonPage/>  }> 
           <TopArticles />
           </Suspense>
         <div className="mt-10 text-center">
