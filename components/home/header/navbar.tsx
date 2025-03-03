@@ -19,12 +19,12 @@ const Navbar = () => {
 
     return (
         <div className=' sticky top-0 z-50 w-full border-b bg-background/50 backdrop-blur-sm supports-[backdrop-filter]:bg-background/20 '>
-            <div className='container mx-auto px-1 md:px-4 sm:px-6 lg:px-8'>
+            <div className=' container mx-auto px-1 md:px-4 sm:px-6 lg:px-8'>
                 <div className='flex justify-between items-center h-16'>
                     {/* Left Section */}
                     <div className='flex items-center'>
                         <Link href={'/'} className='flex items-center space-x-2'>
-                            <span className='font-bold text-xl md:text-2xl'>
+                            <span className='font-bold text-2xl'>
                                 <span className='bg-gradient-to-r from-purple-600 to bg-indigo-600 dark:from-purple-400 to dark:bg-indigo-400 bg-clip-text text-transparent'>Lumin</span>
                                 <span>Text</span>
                             </span>
@@ -52,7 +52,7 @@ const Navbar = () => {
 
                     {/* Right Section */}
 
-                    <div className='flex gap-3 items-center'>
+                    <div className='flex gap-1 md:gap-3 items-center'>
                         <SearchInput />
                         <ToggleMode />
                         {/* User Actions */}
@@ -71,7 +71,7 @@ const Navbar = () => {
                         </SignedOut>
 
                     </div>
-                    <Button variant={'ghost'} size={'icon'} className='md:hidden text-muted-foreground hover:text-foreground' onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+                    <Button variant={'ghost'} size={'icon'} className='md:hidden text-muted-foreground hover:text-foreground  ' onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                         {
                             isMobileMenuOpen ? (<X className='h-5 w-5 ' />) : (<Menu className='h-5 w-5 ' />)
                         }

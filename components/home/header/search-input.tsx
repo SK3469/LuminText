@@ -16,7 +16,7 @@ const SearchInput = () => {
           name="search"
           defaultValue={params.get('search') || ""}
           placeholder="Search articles..."
-          className='pl-10 w-48 focus-visible:ring-0' />
+          className='pl-10 w-32 md:48 focus-visible:ring-0' />
       </div>
     </form>
   )
