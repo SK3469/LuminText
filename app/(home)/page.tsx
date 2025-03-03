@@ -1,5 +1,3 @@
-import { BlogFooter } from "@/components/home/blog-footer";
-import Navbar from "@/components/home/header/navbar";
 import HeroSection from "@/components/home/hero-section";
 import TopArticles from "@/components/home/top-articles";
 import { Button } from "@/components/ui/button";
@@ -12,7 +10,7 @@ import { AllAArticleSkeletonPage } from "../articles/page";
 export default function Home() {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <HeroSection />
       <section className=" relative py-16 md:py-24">
         <div className="container mx-auto px-4 text-center mb-5">
@@ -32,7 +30,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
-      <BlogFooter/>
+      {/* <BlogFooter/> */}
     </div>
   );
 }

@@ -21,7 +21,9 @@ const page: React.FC<SearchPageProps> = async ({ searchParams }) => {
     const totalPages = Math.ceil(total / ITEMS_PER_PAGE);
     return (
         <div className='min-h-screen bg-background'>
-            <main className='container mx-auto px-4 py-12 sm:px-6 lg:text-5xl'>
+            <main className='container mx-auto px-4 py-2 sm:px-6 lg:text-5xl'>
+            
+                    <Link href={'/articles'}> <Button variant={'link'} className='text-sm '>← Back</Button></Link>
                 {/* Page Header */}
                 <div className=' text-center space-y-6 mb-12'>
                     <h1 className='font-bold text-4xl '>All Articles</h1>

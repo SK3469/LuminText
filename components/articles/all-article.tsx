@@ -3,6 +3,7 @@ import { Card } from '../ui/card'
 import Image from 'next/image'
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
 import type { Prisma } from "@prisma/client"
+import Link from 'next/link'
 
 type AllArticlePageProps = {
     articles: Prisma.ArticlesGetPayload<{
@@ -26,7 +27,8 @@ const AllArticlePage: React.FC<AllArticlePageProps> = async ({ articles }) => {
         <div className='grid lg:grid-cols-3 sm:grid-cols-2 gap-8 '>
             {
                 articles.map((article) => (
-                    <Card key={article.id} className='group relative overflow-hidden translate-all hover:shadow-lg '>
+                    <Link key={article.id} href={`/articles/${article.id}`}>
+                      <Card  className='group relative overflow-hidden translate-all hover:shadow-lg '>
                         <div className='p-4'>
                             <div className='relative h-48 w-full rounded-full'>
                                 <Image
@@ -53,6 +55,8 @@ const AllArticlePage: React.FC<AllArticlePageProps> = async ({ articles }) => {
                             </div>
                         </div>
                     </Card>
+                    </Link>
+                  
                 ))
             }
         </div>
