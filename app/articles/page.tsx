@@ -30,7 +30,7 @@ const page: React.FC<SearchPageProps> = async ({ searchParams }) => {
                     <ArticleSearchInput />
                 </div>
                 {/* All Article card */}
-                <Suspense fallback={<AllAArticleSkeletonPage />}>
+                <Suspense fallback={<AllArticleSkeletonPage />}>
                     <AllArticlePage articles={articles} />
                 </Suspense>
                 {/* pagination */}
@@ -56,7 +56,7 @@ const page: React.FC<SearchPageProps> = async ({ searchParams }) => {
 
 export default page;
 
-export const AllAArticleSkeletonPage = () => {
+export const AllArticleSkeletonPage = () => {
     return (
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {Array.from({ length: 3 }).map((_, index) => (
